@@ -1,0 +1,35 @@
+body{
+	margin-top: 1%;
+}
+#clos:hover{
+	background: #ff00bf;
+	opacity: 0.4;
+	color: #bab6b6;
+	padding: 15px;
+	font-weight: bold;
+	
+}
+.common p
+{
+    background: #bab6b6;
+    padding: 3% 5%;
+	margin-top: 20px;
+	
+}
+.lista-paises li
+{
+    list-style: none;
+     padding: 15px;
+    border-bottom: 1px solid #a89090;
+    font-size: 18px;
+    
+}
+
+.lista img {
+    height: 10%;
+    padding-right: 5%;
+}
+
+.lista .codigo{
+    display: none;
+}
