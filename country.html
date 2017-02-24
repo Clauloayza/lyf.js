@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/country.css">
 </head>
-<body>
+<body onload="init()">
   <div class="lyft-linear">
    <header>
 		<div class="container">
@@ -37,14 +37,15 @@
                   <div class="input-group-btn">
                     <a href="paises.html"><button type="button" class="btn btn-default dropdown-toggle"
                             data-toggle="dropdown">
-                     <img class="img-responsive peru" src="imagenes/peru.png" alt="" id="bandera">
+                     <img class="img-responsive peru" src="imagenes/peru.png" alt="" id="peruFlag">
                      <span class="caret"></span>
                     </button></a>
 
                   </div>
-					<span  class="input-group-addon" id="codigopais">+51</span> 
-                  <input type="text" class="form-control" value="" placeholder="11234567">
+					<span  class="input-group-addon"><strong>+51</strong></span> 
+                  <input type="text" class="form-control" value="" placeholder="11234567" id="number" onkeydown="validateNumber(event)">
                 </div>
+                <div id="mensajeNumber"></div>
               </div>
           </div>
         

@@ -46,6 +46,7 @@
 
                   <input type="text" class="form-control"  value="" placeholder="Firts name                                                        Last name" id="name" onkeyup="validateName(event)">
                 </div>
+                <div id="mensajeName"></div>
               </div>
           </div>
           <div class="row">
@@ -61,20 +62,21 @@
 
                   </div>
 
-                  <input type="text" class="form-control" value="" placeholder="Email" id="email">
+                  <input type="text" class="form-control" value="" placeholder="Email" id="email" onkeyup="validateEmail(event)">
                 </div>
+                <div id="mensajeEmail"></div>
               </div>
           </div>
        
    </section>
    <div class="container text-center terminos">
-   	<input type="checkbox">
+   	<input type="checkbox" id="check" onchange="onCheck(event)" class="check">
    	<span>I agree to Lyft´s <a href="" class="check">Terms of Service</a></span>
    </div>
-   
+   <div id="mensjeCheck"></div>
    <section class="container">
       <center>
-          <a href="index.html" ><div class="next">Next</div></a>
+          <a href="index.html" id="next" ><div class="next">Next</div></a>
       </center>
        
    </section>

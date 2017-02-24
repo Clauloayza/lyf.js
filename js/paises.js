@@ -1,39 +1,57 @@
-function init()
-{
-   //console.log(init);
-   var paises=
-  [{"nombre":"Australia", "phone_code": "355", "imagen":'iconos/paises/au.png', "letra":'A<br>B'},   
-  {"nombre":"Canada","phone_code": "49" , "imagen": 'iconos/paises/ca.png',"letra":'C<br>D'},  
-  { "nombre":"China","phone_code": "213","imagen": 'iconos/paises/cn.png',"letra":'E<br>F'},{ "nombre":"Francia","phone_code": "213","imagen": 'iconos/paises/fr.png',"letra":'G<br>H'},{ "nombre":"India","phone_code": "213","imagen": 'iconos/paises/in.png',"letra":'I<br>J'},{ "nombre":"Japon","phone_code": "213","imagen": 'iconos/paises/jp.png',"letra":'K<br>L'},{ "nombre":"Mexico","phone_code": "213","imagen": 'iconos/paises/mx.png',"letra":'M<br>N'},{ "nombre":"Puerto Rico","phone_code": "213","imagen": 'iconos/paises/pa.png',"letra":'O<br>P'},{ "nombre":"United Kingdom","phone_code": "213","imagen": 'iconos/paises/cn.png',"letra":'U<br>Z'},
-    ];
+function init(){
+    createList();
+    var listaPaises = document.getElementsByTagName("li");
+    //var listaPaises = $('li');
     
-    //console.log(paises[0].nombre);
-    var listaPaises= document.getElementById("lista-paises");
-    //console.log(listaPaises);
-        for(var i  in paises)
-        {
-		
-        var html='<a href="signup.html"> <li><img class="imagen"  src="'+paises[i].imagen+'" alt="">'+paises[i].nombre+'<span class="codigo">'+paises[i].phone_code+'</span></li></a>';
+    listaPaises.each(function(){
+        var src =$(this).find('img').attr('src');
+        console.log(sa<s);
+    })
     
-		listaPaises.innerHTML+=html;
-	}
     
-    var link =document.getElementsByTagName("li");
-    //console.log(link);
     
-    for (var i=0 ;i<link.length;i++){
-		link[i].addEventListener('click', onLinkClick);
+    
+    for(var i=0; i<listaPaises.length; i++){
+        listaPaises[i].addEventListener("click",onCountryClick);
+    }
+    
+}
+
+function createList() {
+    var elListCountries = document.getElementById("list-countries");
+    for(var i in paises){
+        var listHtml= 
+            '<li id="' + i + '">'+
+                '<img class="img-size" src="'+ paises[i].imageURL +'" alt=""><p class="country-name">'+ paises[i].nombre +'</p> <span><strong>+'+ paises[i].phone_code +'</strong></span>'+
+            '<hr></li>';
+        elListCountries.innerHTML += listHtml;
     }
 }
 
-
-function onLinkClick(evt)
-{   
-    var imgSrc=evt.currentTarget.getElementsByClassName("imagen")[0].src;
-    //console.log(imgSrc);
-    var codigo=evt.currentTarget.getElementsByClassName("codigo")[0].textContent;
-    localStorage.setItem('srcimg',imgSrc);
-    localStorage.setItem('code',codigo);
+function onCountryClick(evt) {
+    localStorage.setItem("country_select",evt.currentTarget.id);
     
-
+    location.href="pais.html";
 }
+
+
+
+// ----------------------------------------------- BUSCADOR
+var search = document.getElementById("search");
+var ulListCountries = document.getElementById("list-countries");
+
+var contacto = ulListCountries.getElementsByClassName("country-name");
+var forEach = Array.prototype.forEach;
+
+search.addEventListener("keyup", function(e){
+   var choice = this.value;
+ 
+   forEach.call(contacto, function(f){
+       
+       if (f.innerHTML.toLowerCase().search(choice.toLowerCase()) == -1)
+           f.parentNode.style.display = "none";   
+       else
+          f.parentNode.style.display = "block";        
+   });
+}, 
+false);

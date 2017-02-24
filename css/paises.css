@@ -1,35 +1,22 @@
-body{
-	margin-top: 1%;
+.seleccion{
+    background-color:#efeff4;
+    padding: 2% 0;
 }
-#clos:hover{
-	background: #ff00bf;
-	opacity: 0.4;
-	color: #bab6b6;
-	padding: 15px;
-	font-weight: bold;
-	
+.seleccion small {
+    padding-left: 5%;
 }
-.common p
-{
-    background: #bab6b6;
-    padding: 3% 5%;
-	margin-top: 20px;
-	
-}
-.lista-paises li
-{
+ul{
     list-style: none;
-     padding: 15px;
-    border-bottom: 1px solid #a89090;
-    font-size: 18px;
-    
+    padding-left: 2%;
+    padding-top: 6%;
 }
-
-.lista img {
-    height: 10%;
-    padding-right: 5%;
+.img-size {
+    width: 10%;
 }
-
-.lista .codigo{
-    display: none;
+li p {
+    display: inline-block;
+    margin-left: 2%;
+}
+hr {
+    margin-top: 10px;
 }
