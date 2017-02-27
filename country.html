@@ -35,15 +35,14 @@
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="input-group">
                   <div class="input-group-btn">
-                    <a href="paises.html"><button type="button" class="btn btn-default dropdown-toggle"
-                            data-toggle="dropdown">
-                     <img class="img-responsive peru" src="imagenes/peru.png" alt="" id="peruFlag">
+                    <a href="paises.html"> <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-flag">
+                     <img class="img-responsive peru" src="imagenes/peru.png" alt="" id="simbolo">
                      <span class="caret"></span>
                     </button></a>
 
                   </div>
-					<span  class="input-group-addon"><strong>+51</strong></span> 
-                  <input type="text" class="form-control" value="" placeholder="11234567" id="number" onkeydown="validateNumber(event)">
+					<span  class="input-group-addon" id="codigo"><strong>+51</strong></span> 
+                   <input id="number" type="text" onkeydown="validateNumber(event)" class="form-control" aria-label="..." placeholder="1122334455">
                 </div>
                 <div id="mensajeNumber"></div>
               </div>
@@ -56,12 +55,12 @@
    </section>
    <section class="container">
       <center>
-          <a href="email.html"><div class="next">Next</div></a>
+          <a href="email.html" id="next"><div class="next">Next</div></a>
       </center>
        
    </section>
   </div>
 </body>
+<script src="js/common.js"></script>
 <script src="js/country.js"></script>
-<script src="js/paises.js"></script>
 </html>

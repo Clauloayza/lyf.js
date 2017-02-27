@@ -1,16 +1,6 @@
 function init(){
     createList();
     var listaPaises = document.getElementsByTagName("li");
-    //var listaPaises = $('li');
-    
-    listaPaises.each(function(){
-        var src =$(this).find('img').attr('src');
-        console.log(sa<s);
-    })
-    
-    
-    
-    
     for(var i=0; i<listaPaises.length; i++){
         listaPaises[i].addEventListener("click",onCountryClick);
     }
@@ -27,16 +17,38 @@ function createList() {
         elListCountries.innerHTML += listHtml;
     }
 }
+/*function init(){
+    createList();
+    var listaPaises = document.getElementsByTagName("li");
+    //var listaPaises = $('li');
+     
+    for(var i=0; i<listaPaises.length; i++){
+        listaPaises[i].addEventListener("click",onCountryClick);
+    }
+    
+}
+
+function createList() {
+    var elListCountries = document.getElementById("list-countries");
+    for(var i in paises){
+        var listHtml= 
+            '<li id="' + i + '">'+
+                '<img class="img-size" src="'+ paises[i].imageURL +'" alt=""><p class="country-name">'+ paises[i].nombre +'</p> <span><strong>+'+ paises[i].phone_code +'</strong></span>'+
+            '<hr></li>';
+        elListCountries.innerHTML += listHtml;
+    }
+}*/
 
 function onCountryClick(evt) {
-    localStorage.setItem("country_select",evt.currentTarget.id);
-    
-    location.href="pais.html";
+     var imgSrc=evt.currentTarget.getElementsByClassName("imagen")[0].src;
+    //console.log(imgSrc);
+    var codigo=evt.currentTarget.getElementsByClassName("codigo")[0].textContent;
+    localStorage.setItem('srcimg',imgSrc);
+    localStorage.setItem('code',codigo);
 }
 
 
-
-// ----------------------------------------------- BUSCADOR
+//BUSCADOR
 var search = document.getElementById("search");
 var ulListCountries = document.getElementById("list-countries");
 
